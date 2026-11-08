@@ -1,0 +1,452 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>دفتر و دفترچه | محفا تحریر</title>
+
+<link rel="stylesheet" href="style (3).css">
+
+<style>
+
+/* تنظیمات صفحه */
+
+body {
+    font-family: Tahoma;
+    direction: rtl;
+    background: #fff8fa;
+    color: #78334f;
+    margin: 0;
+}
+
+/* عنوان */
+
+.page-title {
+    text-align: center;
+    padding: 25px;
+    background: #f8e5ec;
+}
+
+.page-title h1 {
+    font-size: 28px;
+}
+
+/* محصولات */
+
+.product-section {
+    padding: 25px;
+    text-align: center;
+}
+
+.products {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.product-card {
+    width: 280px;
+    background: white;
+    border: 1px solid #efd5df;
+    border-radius: 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    box-shadow: 0 3px 10px #00000010;
+}
+
+/* عکس محصولات */
+
+.product-image {
+    display: block;
+    cursor: pointer;
+}
+
+.product-image img {
+    width: 100%;
+    height: 230px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+/* قیمت و موجودی */
+
+.price {
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.available {
+    color: green;
+    font-weight: bold;
+}
+
+.unavailable {
+    color: red;
+    font-weight: bold;
+}
+	
+/* مخفی کردن چک باکس */
+
+.product-toggle {
+    display: none;
+}
+
+/* پنجره بازشو */
+
+.product-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.product-toggle:checked ~ .product-modal {
+    display: flex;
+}
+
+.modal-content {
+    width: 400px;
+    max-width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+}
+
+.modal-content img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+}
+
+.modal-content h2 {
+    color: #78334f;
+}
+
+.modal-content label:not(.close) {
+    display: block;
+    text-align: right;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.modal-content select,
+.modal-content input {
+    width: 100%;
+    padding: 11px;
+    margin-top: 8px;
+    border: 1px solid #e9a0b5;
+    border-radius: 7px;
+    box-sizing: border-box;
+    font-family: Tahoma;
+}
+
+/* دکمه افزودن */
+
+.add-button {
+    width: 100%;
+    padding: 13px;
+    margin-top: 20px;
+    background: #78334f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-family: Tahoma;
+    cursor: pointer;
+}
+
+/* بستن پنجره */
+
+.close {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    font-size: 28px;
+    color: #78334f;
+    cursor: pointer;
+}
+
+/* بازگشت */
+
+.back-button {
+    display: inline-block;
+    margin: 25px;
+    padding: 12px 25px;
+    background: #78334f;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+/* پایین سایت */
+
+.footer {
+    background: #78334f;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+}
+
+.footer a {
+    color: #ffe0ea;
+}
+
+/* موبایل */
+
+@media(max-width:650px) {
+    .product-card {
+        width: 90%;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- عنوان صفحه -->
+
+<header class="page-title">
+    <h1>📚 دفتر و دفترچه</h1>
+    <p>محصولات متنوع محفا تحریر</p>
+</header>
+
+<div class="main">
+
+<!-- منوی کناری -->
+<div class="sidebar">
+    <h3>منوی اصلی</h3>
+    <ul>
+                <li><a href="index.html">صفحه اصلی</a></li>
+	    <li><a href="nevesht-afzar.html">نوشت افزار</a></li>
+        <li><a href="daftar-daftarcheh.html">دفتر و دفترچه</a></li>
+        <li><a href="kif-kole.html">کیف و کوله</a></li>
+        <li><a href="sabad.html">سبد خرید</a></li>
+        <li><a href="rezayat.html">رضایت مشتری</a></li>
+        <li><a href="tamas.html">ارتباط با ما</a></li>
+    </ul>
+</div>	
+
+
+<section class="product-section">
+
+<h2>محصولات دفتر و دفترچه</h2>
+
+<div class="products">
+
+
+<!-- محصول اول -->
+
+<div class="product-card">
+
+<input type="checkbox" id="book1" class="product-toggle">
+
+<label for="book1" class="product-image">
+    <img src="img/photo_2026-11-08_15-03-32.jpg"
+         alt="دفتر ۶۰ برگ">
+</label>
+
+<h3>دفتر ۶۰ برگ</h3>
+
+<p class="price">۲۱۰,۰۰۰ تومان</p>
+
+<p class="available">موجود</p>
+
+<div class="product-modal">
+
+<div class="modal-content">
+
+<label for="book1" class="close">×</label>
+
+<img src="img/photo_2026-11-08_15-03-32.jpg"
+     alt="دفتر ۶۰ برگ">
+
+<h2>دفتر ۶۰ برگ</h2>
+
+<p>قیمت: ۲۱۰,۰۰۰ تومان</p>
+
+<p class="available">موجود</p>
+
+<label>انتخاب رنگ:</label>
+
+<select>
+    <option>آبی</option>
+    <option>صورتی</option>
+    <option>سبز</option>
+    <option>زرد</option>
+    <option>بنفش</option>
+</select>
+
+<label>تعداد:</label>
+
+<input type="number" min="1" value="1">
+
+<button class="add-button" type="button">
+افزودن به سبد خرید
+</button>
+
+</div>
+</div>
+
+</div>
+
+
+<!-- محصول دوم -->
+
+<div class="product-card">
+
+<input type="checkbox" id="book2" class="product-toggle">
+
+<label for="book2" class="product-image">
+    <img src="img/photo_2026-11-08_15-04-55.jpg"
+         alt="دفتر ۸۰ برگ">
+</label>
+
+<h3>دفتر ۸۰ برگ</h3>
+
+<p class="price">۹۵,۰۰۰ تومان</p>
+
+<p class="available">موجود</p>
+
+<div class="product-modal">
+
+<div class="modal-content">
+
+<label for="book2" class="close">×</label>
+
+<img src="img/photo_2026-11-08_15-04-55.jpg"
+     alt="دفتر ۸۰ برگ">
+
+<h2>دفتر ۸۰ برگ</h2>
+
+<p>قیمت: ۹۵,۰۰۰ تومان</p>
+
+<p class="available">وضعیت موجودی: موجود</p>
+
+<label>انتخاب رنگ:</label>
+
+<select>
+    <option>بنفش</option>
+    <option>سبز</option>
+    <option>آبی</option>
+</select>
+
+<label>تعداد:</label>
+
+<input type="number" min="1" value="1">
+
+<button class="add-button" type="button">
+افزودن به سبد خرید
+</button>
+
+</div>
+</div>
+
+</div>
+
+
+<!-- محصول سوم -->
+
+<div class="product-card">
+
+<input type="checkbox" id="book3" class="product-toggle">
+
+<label for="book3" class="product-image">
+    <img src="img/photo_2026-11-08_15-03-38.jpg"
+         alt="دفترچه فنری">
+</label>
+
+<h3>دفترچه فنری</h3>
+
+<p class="price">۵۵,۰۰۰ تومان</p>
+
+<p class="unavailable">ناموجود</p>
+
+<div class="product-modal">
+
+<div class="modal-content">
+
+<label for="book3" class="close">×</label>
+
+<img src="img/photo_2026-11-08_15-03-38.jpg"
+     alt="دفترچه فنری">
+
+<h2>دفترچه فنری</h2>
+
+<p>قیمت: ۵۵,۰۰۰ تومان</p>
+
+<p class="unavailable">وضعیت موجودی: ناموجود</p>
+
+<label>انتخاب رنگ:</label>
+
+<select>
+    <option>قرمز</option>
+    <option>زرد</option>
+    <option>صورتی</option>
+</select>
+
+<label>تعداد:</label>
+
+<input type="number" min="1" value="1" disabled>
+
+<button class="add-button" type="button" disabled>
+محصول ناموجود است
+</button>
+
+</div>
+</div>
+
+</div>
+
+</div>
+</section>
+    </div>
+</div>
+<!-- بازگشت به صفحه اصلی -->
+
+<div style="text-align:center;">
+
+<a href="index.html" class="back-button">
+بازگشت به صفحه اصلی
+</a>
+
+</div>
+
+
+<!-- ارتباط با ما -->
+
+<footer class="footer">
+
+<h2>ارتباط با محفا تحریر</h2>
+
+<p>ارسال از اصفهان ـ ورزنه</p>
+
+<p>اینستاگرام: @mahfa.tahrir</p>
+
+<p>
+    ایتا:
+    <a href="https://eitaa.com/MahfaTahrir">
+    MahfaTahrir
+    </a>
+</p>
+
+<h3>مدیریت: زهرا کریمیان</h3>
+
+</footer>
+
+</body>
+</html>

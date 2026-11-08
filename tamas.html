@@ -1,0 +1,297 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>تماس با ما | محفا تحریر</title>
+
+    <link rel="stylesheet" href="style (3).css">
+
+    <style>
+
+        .page-title {
+            text-align: center;
+            padding: 25px 10px;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: row;
+            direction: rtl;
+            gap: 20px;
+            padding: 20px;
+            align-items: flex-start;
+        }
+
+        .sidebar {
+            width: 230px;
+            flex-shrink: 0;
+        }
+
+        .content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .contact-section {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.10);
+            max-width: 650px;
+            margin: auto;
+            box-sizing: border-box;
+        }
+
+        .contact-section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-section p {
+            text-align: center;
+            line-height: 2;
+        }
+
+        .contact-form {
+            margin-top: 25px;
+        }
+
+        .contact-form label {
+            display: block;
+            margin: 12px 0 6px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: 15px;
+        }
+
+        .contact-form textarea {
+            height: 130px;
+            resize: vertical;
+        }
+
+        .send-button {
+            display: block;
+            margin: 20px auto 0;
+            padding: 11px 30px;
+            background: #e88ab5;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .send-button:hover {
+            background: #d96b9e;
+        }
+
+        .contact-info {
+            background: #fff0f6;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 25px;
+            text-align: center;
+            line-height: 2.2;
+        }
+
+        .contact-info a {
+            color: #b84d7c;
+            text-decoration: none;
+        }
+
+        .back-button {
+            display: block;
+            width: fit-content;
+            margin: 25px auto !important;
+            padding: 10px 25px;
+            background: #e88ab5;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+            left: auto;
+            right: auto;
+        }
+
+        .back-button:hover {
+            background: #d96b9e;
+        }
+
+        @media (max-width: 768px) {
+
+            .main {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+            }
+
+            .content {
+                width: 100%;
+            }
+
+            .contact-section {
+                width: 100%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- عنوان صفحه -->
+    <header class="page-title">
+
+        <h1>💌 تماس با ما</h1>
+
+        <p>ما همیشه آماده شنیدن نظرات شما هستیم</p>
+
+    </header>
+
+
+    <div class="main">
+
+
+        <!-- محتوای تماس با ما -->
+        <div class="content">
+
+            <section class="contact-section">
+
+                <h2>با محفا تحریر در ارتباط باشید 🌷</h2>
+
+                <p>
+                    اگر سوالی درباره محصولات دارید یا به راهنمایی نیاز دارید،
+                    می‌توانید از راه‌های ارتباطی زیر با ما در تماس باشید.
+                </p>
+
+
+                <!-- فرم تماس -->
+                <form class="contact-form">
+
+                    <label for="name">نام و نام خانوادگی:</label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="نام خود را وارد کنید"
+                        required
+                    >
+
+
+                    <label for="phone">شماره تماس:</label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="شماره تماس خود را وارد کنید"
+                    >
+
+
+                    <label for="subject">موضوع پیام:</label>
+
+                    <input
+                        type="text"
+                        id="subject"
+                        name="subject"
+                        placeholder="موضوع پیام خود را بنویسید"
+                    >
+
+
+                    <label for="message">متن پیام:</label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        placeholder="پیام خود را اینجا بنویسید..."
+                        required
+                    ></textarea>
+
+
+                    <button type="button" class="send-button">
+                        ارسال پیام
+                    </button>
+
+                </form>
+
+
+                <!-- راه های ارتباطی -->
+                <div class="contact-info">
+
+                    <h3>راه‌های ارتباطی با ما</h3>
+
+                    <p>
+                        📷 اینستاگرام:
+                        <a href="https://instagram.com/mahfa.tahrir">
+                            @mahfa.tahrir
+                        </a>
+                    </p>
+
+                    <p>
+                        💬 ایتا:
+                        <a href="https://eitaa.com/MahfaTahrir">
+                            MahfaTahrir
+                        </a>
+                    </p>
+
+                    <p>
+                        🌸 فروشگاه اینترنتی محفا تحریر
+                    </p>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </div>
+
+
+    <!-- دکمه بازگشت -->
+    <a href="asli.html" class="back-button">
+        بازگشت به صفحه اصلی
+    </a>
+
+
+    <!-- پابرگ سایت -->
+    <footer class="footer" id="contact">
+
+        <h3>ارتباط با محفا تحریر</h3>
+
+        <p>اینستاگرام: @mahfa.tahrir</p>
+
+        <p>
+            ایتا:
+            <a href="https://eitaa.com/MahfaTahrir">
+                MahfaTahrir
+            </a>
+        </p>
+
+        <p>مدیریت: محفا تحریر</p>
+
+        <p>تمامی حقوق محفوظ است ©</p>
+
+    </footer>
+
+</body>
+
+</html>

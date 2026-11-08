@@ -1,0 +1,344 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>سبد خرید | محفا تحریر</title>
+
+    <link rel="stylesheet" href="style (3).css">
+
+    <style>
+
+        .page-title {
+            text-align: center;
+            padding: 25px 10px;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: row;
+            direction: rtl;
+            gap: 20px;
+            padding: 20px;
+            align-items: flex-start;
+        }
+
+        .sidebar {
+            width: 230px;
+            flex-shrink: 0;
+        }
+
+        .content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .cart-section h2 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .cart-items {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.10);
+        }
+
+        .cart-item img {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .cart-info {
+            flex: 1;
+        }
+
+        .cart-info h3 {
+            margin-top: 0;
+        }
+
+        .cart-info p {
+            margin: 8px 0;
+        }
+
+        .quantity {
+            width: 65px;
+            padding: 7px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .cart-summary {
+            background: #fff0f6;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        .cart-summary h3 {
+            margin-top: 0;
+        }
+
+        .total-price {
+            color: #b84d7c;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+       .continue-button {
+    display: block;
+    width: fit-content;
+    background: #e88ab5;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin: 10px auto;
+    text-align: center;
+}
+
+        .continue-button:hover {
+            background: #d96b9e;
+        }
+
+        .back-button {
+            display: block;
+            width: fit-content;
+            margin: 25px auto;
+            padding: 10px 25px;
+            background: #e88ab5;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        .back-button:hover {
+            background: #d96b9e;
+        }
+
+        .footer {
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+
+            .main {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+            }
+
+            .content {
+                width: 100%;
+            }
+
+            .cart-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .cart-item img {
+                width: 150px;
+                height: 150px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- عنوان صفحه -->
+    <header class="page-title">
+
+        <h1>🛒 سبد خرید</h1>
+
+        <p>خرید آسان از محفا تحریر</p>
+
+    </header>
+
+
+    <div class="main">
+
+<!-- منوی کناری -->
+<div class="sidebar">
+    <h3>منوی اصلی</h3>
+    <ul>
+                <li><a href="index.html">صفحه اصلی</a></li>
+	    <li><a href="nevesht-afzar.html">نوشت افزار</a></li>
+        <li><a href="daftar-daftarcheh.html">دفتر و دفترچه</a></li>
+        <li><a href="kif-kole.html">کیف و کوله</a></li>
+        <li><a href="sabad.html">سبد خرید</a></li>
+        <li><a href="rezayat.html">رضایت مشتری</a></li>
+        <li><a href="tamas.html">ارتباط با ما</a></li>
+    </ul>
+</div></div>
+
+
+        <!-- محتوای سبد خرید -->
+        <div class="content">
+
+            <section class="cart-section">
+
+                <h2>محصولات انتخاب‌شده شما</h2>
+
+
+                <div class="cart-items">
+
+
+                    <!-- محصول اول -->
+                    <div class="cart-item">
+
+                        <img src="img/photo_2026-11-08_23-57-31.jpg" alt="کوله پشتی">
+
+                        <div class="cart-info">
+
+                            <h3>کوله پشتی مدرسه</h3>
+
+                            <p>قیمت:2,550,000تومان</p>
+
+                            <p>تعداد:</p>
+
+                            <input
+                                type="number"
+                                class="quantity"
+                                min="1"
+                                value="1"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- محصول دوم -->
+                    <div class="cart-item">
+
+                        <img src="img/photo_2026-11-08_23-02-16.jpg" alt="خودکار">
+
+                        <div class="cart-info">
+
+                            <h3>خودکار پاکن دار</h3>
+
+                            <p>قیمت: 55,000 تومان</p>
+
+                            <p>تعداد:</p>
+
+                            <input
+                                type="number"
+                                class="quantity"
+                                min="1"
+                                value="1"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- محصول سوم -->
+                    <div class="cart-item">
+
+                        <img src="img/photo_2026-11-08_23-52-51.jpg" alt="جامدادی">
+
+                        <div class="cart-info">
+
+                            <h3>جامدادی</h3>
+
+                                <p>قیمت: 260,000 تومان</p>
+
+                            <p>تعداد:</p>
+
+                            <input
+                                type="number"
+                                class="quantity"
+                                min="1"
+                                value="1"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- جمع مبلغ -->
+                <div class="cart-summary">
+
+                    <h3>خلاصه سفارش</h3>
+
+                    <p>تعداد محصولات: ۳ عدد</p>
+
+                    <p>هزینه ارسال: محاسبه نشده</p>
+
+                    <p>مبلغ کل:</p>
+
+                    <div class="total-price">
+                        795,000 تومان
+                    </div>
+
+                    <p>
+                        برای ثبت سفارش، با فروشگاه تماس بگیرید.
+                    </p>
+
+                    <a href="#contact" class="continue-button">
+                        اطلاعات تماس
+                    </a>
+
+                    <a href="nevesht-afzar.html" class="continue-button">
+                        ادامه خرید
+                    </a>
+					<a href="index.html" class="continue-button">بازگشت به صفحه اصلی                    </a>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </div>
+    <!-- پابرگ سایت -->
+    <footer class="footer" id="contact">
+
+        <h3>ارتباط با محفا تحریر</h3>
+
+        <p>اینستاگرام: @mahfa.tahrir</p>
+
+        <p>
+            ایتا:
+            <a href="https://eitaa.com/MahfaTahrir">
+                MahfaTahrir
+            </a>
+        </p>
+
+        <p>مدیریت: محفا تحریر</p>
+
+        <p>تمامی حقوق محفوظ است ©</p>
+
+    </footer>
+
+</body>
+
+</html>

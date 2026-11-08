@@ -1,0 +1,356 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>محفا تحریر | فروشگاه آنلاین</title>
+<link rel="stylesheet" href="style (3).css">
+</head>
+
+<body>
+
+<!-- سربرگ سایت -->
+<div class="header">
+    <img src="img/file_00000000e3f081f4805df3fe8e85f48d.jpg" alt="محفا تحریر">
+    <h1>به فروشگاه محفا تحریر خوش آمدید</h1>
+    <p>دنیایی از رنگ و زیبایی در لوازم التحریر</p>
+</div>
+
+<div class="main">
+
+<!-- منوی کناری -->
+<div class="sidebar">
+    <h3>منوی اصلی</h3>
+    <ul>
+                <li><a href="index.html">صفحه اصلی</a></li>
+	    <li><a href="nevesht-afzar.html">نوشت افزار</a></li>
+        <li><a href="daftar-daftarcheh.html">دفتر و دفترچه</a></li>
+        <li><a href="kif-kole.html">کیف و کوله</a></li>
+        <li><a href="sabad.html">سبد خرید</a></li>
+        <li><a href="rezayat.html">رضایت مشتری</a></li>
+        <li><a href="tamas.html">ارتباط با ما</a></li>
+    </ul>
+</div>
+
+<!-- محتوای اصلی -->
+<div class="content" id="home">
+
+    <!-- پرفروش ترین ها -->
+    <section class="product-section">
+        <h2>⭐ محصولات پرفروش</h2>
+
+        <div class="products">
+
+            <div class="product-card" onclick="showProduct('استیک نوت شفاف شاین دار',85000,'موجود','سفید، ','img/imagesp1.jpg')">
+                <img src="img/imagesp1.jpg" alt="دفتر فانتزی">
+                <h3>استیک نوت شفاف شاین دار</h3>
+                <p>قیمت: 85,000 تومان</p>
+                <span class="available">موجود</span>
+            </div>
+
+            
+<div class="product-card"
+onclick="showProduct('روان نویس',210000,'موجود','صورتی، سبز، بنفش، آبی','img/ravannevis.jpg')">
+
+    <img src="img/ravannevis.jpg" alt="روان نویس">
+
+    <h3>روان نویس</h3>
+
+    <p>قیمت: 210,000 تومان</p>
+
+    <span class="available">موجود</span>
+
+</div>
+
+
+           
+<div class="product-card"
+onclick="showProduct('برچسب',190000,'ناموجود','صورتی، آبی، سبز، نارنجی','img/barchasb.jpg')">
+
+    <img src="img/barchasb.jpg" alt="برچسب">
+
+    <h3>برچسب</h3>
+
+    <p>قیمت: 190,000 تومان</p>
+
+    <span class="unavailable">ناموجود</span>
+
+</div>
+	</section>
+    <!-- محصولات آف خورده -->
+    <section class="product-section sale-section">
+        <h2>🔥 محصولات آف خورده</h2>
+
+        <div class="products">
+
+            <div class="product-card" onclick="showSaleProduct('پاک کن ژله ای',70000,50000,'موجود','صورتی بنفش ، آبی بنفش','img/photo_2026-11-08_17-10-42.jpg')">
+                <img src="img/photo_2026-11-08_17-10-42.jpg" alt="پاک کن ژله ای">
+                <h3>پاک کن ژله ای</h3>
+                <del>70,000 تومان</del>
+                <p class="sale-price">50,000 تومان</p>
+                <span class="available">موجود</span>
+            </div>
+
+            <div class="product-card" onclick="showSaleProduct('دستمال جیبی',85000,65000,'موجود','رندوم','img/photo_2026-11-08_17-14-58.jpg')">
+                <img src="img/photo_2026-11-08_17-14-58.jpg" alt="دستمال جیبی">
+                <h3>دستمال جیبی</h3>
+                <del>۸۵,۰۰۰ تومان</del>
+                <p class="sale-price">۶۵,۰۰۰ تومان</p>
+                <span class="available">موجود</span>
+            </div>
+
+       
+<div class="product-card"
+onclick="showSaleProduct('ماژیک دو سر',220000,175000,'ناموجود','12 رنگ','img/photo_2026-11-08_17-22-07.jpg')">
+
+    <img src="img/photo_2026-11-08_17-22-07.jpg" alt="ماژیک دو سر">
+
+    <h3>ماژیک دو سر</h3>
+
+    <del>۲۲۰,۰۰۰ تومان</del>
+
+    <p class="sale-price">۱۷۵,۰۰۰ تومان</p>
+
+    <span class="unavailable">ناموجود</span>
+
+</div>
+
+
+        </div>
+
+
+<!-- پنجره جزئیات محصول -->
+<div class="modal" id="productModal">
+    <div class="modal-content">
+
+        <span class="close" onclick="closeProduct()">&times;</span>
+
+        <img id="detailImage" src="" alt="تصویر محصول">
+
+        <h2 id="detailName"></h2>
+
+        <div id="detailPrice"></div>
+
+        <p id="detailStock"></p>
+
+        <label>انتخاب رنگ:</label>
+        <select id="detailColor"></select>
+
+        <label>تعداد محصول:</label>
+        <input type="number" id="detailQuantity" value="1" min="1">
+
+        <button id="addButton" onclick="addToCart()">
+            افزودن به سبد خرید
+        </button>
+
+        <p id="message"></p>
+
+    </div>
+</div>
+
+
+<!-- ارتباط با ما -->
+<div class="footer" id="contact">
+
+    <h2>ارتباط با محفا تحریر</h2>
+
+    <p>شماره تماس: 09909979397</p>
+
+    <p>ارسال از اصفهان ـ ورزنه</p>
+
+    <p>
+        آدرس اینستاگرام:
+        <a href="https://instagram.com/mahfa.tahrir" target="_blank">
+            @mahfa.tahrir
+        </a>
+    </p>
+
+    <p>
+        آدرس ایتا:
+        <a href="https://eitaa.com/MahfaTahrir" target="_blank">
+            MahfaTahrir
+        </a>
+    </p>
+
+    <h3>مدیریت: زهرا کریمیان</h3>
+
+</div>
+
+
+<script>
+
+// اطلاعات محصول انتخاب شده
+let currentProduct = null;
+let cart = [];
+
+// نمایش محصول معمولی
+function showProduct(name, price, stock, colors, image) {
+
+    currentProduct = {
+        name: name,
+        price: price,
+        oldPrice: null,
+        stock: stock
+    };
+
+    openProduct(name, price, null, stock, colors, image);
+}
+
+
+// نمایش محصول آف خورده
+function showSaleProduct(name, oldPrice, price, stock, colors, image) {
+
+    currentProduct = {
+        name: name,
+        price: price,
+        oldPrice: oldPrice,
+        stock: stock
+    };
+
+    openProduct(name, price, oldPrice, stock, colors, image);
+}
+
+
+// باز کردن جزئیات
+function openProduct(name, price, oldPrice, stock, colors, image) {
+
+    document.getElementById("detailName").innerText = name;
+
+    document.getElementById("detailImage").src = image;
+
+    let priceBox = document.getElementById("detailPrice");
+
+    if (oldPrice) {
+        priceBox.innerHTML =
+        "<del>" + oldPrice.toLocaleString("fa-IR") +
+        " تومان</del><br><strong>" +
+        price.toLocaleString("fa-IR") + " تومان</strong>";
+    } else {
+        priceBox.innerHTML =
+        "<strong>" + price.toLocaleString("fa-IR") +
+        " تومان</strong>";
+    }
+
+    document.getElementById("detailStock").innerText =
+        "وضعیت موجودی: " + stock;
+
+    let colorBox = document.getElementById("detailColor");
+
+    colorBox.innerHTML = "";
+
+    colors.split("،").forEach(function(color) {
+        let option = document.createElement("option");
+        option.text = color.trim();
+        option.value = color.trim();
+        colorBox.add(option);
+    });
+
+    document.getElementById("detailQuantity").value = 1;
+
+    document.getElementById("message").innerText = "";
+
+    document.getElementById("addButton").disabled =
+        stock !== "موجود";
+
+    document.getElementById("productModal").style.display = "flex";
+}
+
+
+// بستن پنجره
+function closeProduct() {
+    document.getElementById("productModal").style.display = "none";
+}
+
+
+// افزودن به سبد خرید
+function addToCart() {
+
+    if (!currentProduct || currentProduct.stock !== "موجود") {
+        return;
+    }
+
+    let quantity = parseInt(
+        document.getElementById("detailQuantity").value
+    );
+
+    if (isNaN(quantity) || quantity < 1) {
+        alert("لطفاً تعداد معتبر وارد کنید.");
+        return;
+    }
+
+    let color = document.getElementById("detailColor").value;
+
+    cart.push({
+        name: currentProduct.name,
+        price: currentProduct.price,
+        quantity: quantity,
+        color: color
+    });
+
+    document.getElementById("message").innerText =
+        "محصول به سبد خرید اضافه شد.";
+
+    showCart();
+}
+
+
+// نمایش سبد خرید
+function showCart() {
+
+    let box = document.getElementById("cartItems");
+
+    let total = 0;
+
+    if (cart.length === 0) {
+        box.innerText = "هنوز محصولی انتخاب نکرده‌اید.";
+    } else {
+
+        box.innerHTML = "";
+
+        cart.forEach(function(item, index) {
+
+            let sum = item.price * item.quantity;
+
+            total += sum;
+
+            let row = document.createElement("div");
+            row.className = "cart-row";
+
+            row.innerHTML =
+                "<span>" + item.name + " - " + item.color +
+                " - تعداد: " + item.quantity +
+                "</span><strong>" +
+                sum.toLocaleString("fa-IR") +
+                " تومان</strong>";
+
+            let remove = document.createElement("button");
+            remove.innerText = "حذف";
+            remove.onclick = function() {
+                cart.splice(index, 1);
+                showCart();
+            };
+
+            row.appendChild(remove);
+            box.appendChild(row);
+        });
+    }
+
+    document.getElementById("totalPrice").innerText =
+        "جمع کل: " + total.toLocaleString("fa-IR") + " تومان";
+}
+
+
+// بستن پنجره با کلیک بیرون آن
+window.onclick = function(event) {
+    let modal = document.getElementById("productModal");
+
+    if (event.target === modal) {
+        closeProduct();
+    }
+};
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,388 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کیف و کوله | محفا تحریر</title>
+
+    <link rel="stylesheet" href="style (3).css">
+
+    <style>
+        .page-title {
+            text-align: center;
+            padding: 25px 10px;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: row;
+            direction: rtl;
+            gap: 20px;
+            padding: 20px;
+            align-items: flex-start;
+        }
+
+        .sidebar {
+            width: 230px;
+            flex-shrink: 0;
+        }
+
+        .content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .product-section h2 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .product-card {
+            width: 220px;
+            background: white;
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+            box-sizing: border-box;
+        }
+
+        .product-toggle {
+            display: none;
+        }
+
+        .product-image {
+            display: block;
+            cursor: pointer;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 180px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .product-card h3 {
+            margin: 12px 0;
+        }
+
+        .product-card p {
+            margin: 8px 0;
+        }
+
+        .available {
+            color: green;
+        }
+
+        .unavailable {
+            color: red;
+        }
+
+        .product-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            inset: 0;
+            background: rgba(0,0,0,0.65);
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .product-toggle:checked ~ .product-modal {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            width: 400px;
+            max-width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+        }
+
+        .close {
+            position: absolute;
+            top: 8px;
+            left: 15px;
+            font-size: 30px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .modal-content select,
+        .modal-content input {
+            padding: 8px;
+            margin: 8px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        .add-button {
+            background: #7b4b94;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 12px;
+        }
+
+        /* دکمه بازگشت صورتی */
+        .back-button {
+            display: block;
+            width: fit-content;
+            margin: 25px auto;
+            padding: 10px 25px;
+            background: #e88ab5;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+
+        .back-button:hover {
+            background: #d96b9e;
+        }
+
+        @media (max-width: 768px) {
+            .main {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+            }
+
+            .content {
+                width: 100%;
+            }
+
+            .product-card {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- عنوان صفحه -->
+    <header class="page-title">
+        <h1>🎒 کیف و کوله</h1>
+        <p>محصولات متنوع محفا تحریر</p>
+    </header>
+
+    <div class="main">
+
+<!-- منوی کناری -->
+<div class="sidebar">
+    <h3>منوی اصلی</h3>
+    <ul>
+                <li><a href="index.html">صفحه اصلی</a></li>
+	    <li><a href="nevesht-afzar.html">نوشت افزار</a></li>
+        <li><a href="daftar-daftarcheh.html">دفتر و دفترچه</a></li>
+        <li><a href="kif-kole.html">کیف و کوله</a></li>
+        <li><a href="sabad.html">سبد خرید</a></li>
+        <li><a href="rezayat.html">رضایت مشتری</a></li>
+        <li><a href="tamas.html">ارتباط با ما</a></li>
+    </ul>
+</div>
+
+        <!-- قسمت محصولات -->
+        <div class="content">
+
+            <section class="product-section">
+                <h2>محصولات کیف و کوله</h2>
+
+                <div class="products">
+
+                    <!-- محصول اول: کوله پشتی -->
+                    <div class="product-card">
+
+                        <input type="checkbox" id="bag1" class="product-toggle">
+
+                        <label for="bag1" class="product-image">
+                            <img src="img/photo_2026-11-08_23-57-31.jpg" alt="کوله پشتی">
+                        </label>
+
+                        <h3>کوله پشتی مدرسه</h3>
+                        <p>قیمت: 2,550,000 تومان</p>
+                        <p class="available">موجود</p>
+
+                        <div class="product-modal">
+                            <div class="modal-content">
+
+                                <label for="bag1" class="close">×</label>
+
+                                <img src="img/photo_2026-11-08_23-57-31.jpg" alt="کوله پشتی">
+
+                                <h2>کوله پشتی مدرسه</h2>
+                                <p>قیمت: 2,550,000 تومان</p>
+                                <p class="available">موجود</p>
+
+                                <label>رنگ:</label>
+                                <select>
+                                    <option>قهوه ای</option>
+                                    <option>مشکی</option>
+                                </select>
+
+                                <br>
+
+                                <label>تعداد:</label>
+                                <input type="number" min="1" value="1">
+
+                                <br>
+
+                                <button class="add-button">افزودن به سبد خرید</button>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <!-- محصول دوم:کیف پول -->
+                    <div class="product-card">
+
+                        <input type="checkbox" id="bag2" class="product-toggle">
+
+                        <label for="bag2" class="product-image">
+                            <img src="img/photo_2026-11-08_23-47-17.jpg" alt="کیف پول">
+                        </label>
+
+                        <h3>کیف پول</h3>
+                        <p>قیمت: 380,000 تومان</p>
+                        <p class="available">موجود</p>
+
+                        <div class="product-modal">
+                            <div class="modal-content">
+
+                                <label for="bag2" class="close">×</label>
+
+                                <img src="img/photo_2026-11-08_23-47-17.jpg" alt="کیف پول">
+
+                                <h2>کیف پول</h2>
+                                <p>قیمت: 380,000 تومان</p>
+                                <p class="available">موجود </p>
+
+                                <label>رنگ:</label>
+                                <select>
+                                    <option>مشکی(boy)</option>
+                                    <option>سفید(girl)</option>
+                                </select>
+
+                                <br>
+
+                                <label>تعداد:</label>
+                                <input type="number" min="1" value="1">
+
+                                <br>
+
+                                <button class="add-button">افزودن به سبد خرید</button>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <!-- محصول سوم: جامدادی -->
+                    <div class="product-card">
+
+                        <input type="checkbox" id="bag3" class="product-toggle">
+
+                        <label for="bag3" class="product-image">
+                            <img src="img/photo_2026-11-08_23-52-51.jpg" alt="جامدادی">
+                        </label>
+
+                        <h3>جامدادی </h3>
+                        <p>قیمت: 260,000 تومان</p>
+                        <p class="available">موجود</p>
+
+                        <div class="product-modal">
+                            <div class="modal-content">
+
+                                <label for="bag3" class="close">×</label>
+
+                                <img src="img/photo_2026-11-08_23-52-51.jpg" alt="جامدادی">
+
+                                <h2>جامدادی </h2>
+                                <p>قیمت: 260,000 تومان</p>
+                                <p class="available">موجود </p>
+
+                                <label>رنگ:</label>
+                                <select>
+                                    <option>قرمز</option>
+                                    <option>آبی</option>
+                                    <option>مشکی</option>
+                                </select>
+
+                                <br>
+
+                                <label>تعداد:</label>
+                                <input type="number" min="1" value="1">
+
+                                <br>
+
+                                <button class="add-button">افزودن به سبد خرید</button>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- دکمه بازگشت -->
+    <a href="kif-kole.html" class="back-button">
+        بازگشت به صفحه اصلی
+    </a>
+
+    <!-- پابرگ سایت -->
+    <footer class="footer" id="contact">
+
+        <h3>ارتباط با محفا تحریر</h3>
+
+        <p>اینستاگرام: @mahfa.tahrir</p>
+
+        <p>
+            ایتا:
+            <a href="https://eitaa.com/MahfaTahrir">
+                MahfaTahrir
+            </a>
+        </p>
+
+        <p>مدیریت: محفا تحریر</p>
+
+        <p>تمامی حقوق محفوظ است ©</p>
+
+    </footer>
+
+</body>
+</html>
